@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calc</title>
+    <style>
+        /* This centers the calculator on the page */
+        body { 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9; /* Light background for contrast */
+        }
+
+        .calc { 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            width: 220px; 
+            border-radius: 10px; 
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Adds a nice shadow */
+        }
+
+        input { 
+            width: 100%; 
+            margin-bottom: 10px; 
+            font-size: 1.5rem; 
+            box-sizing: border-box; /* Ensures padding doesn't break width */
+            text-align: right;
+            padding: 5px;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        
+        button { 
+            padding: 15px 5px; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            border: 1px solid #ddd;
+            background: #fff;
+            font-size: 1rem;
+        }
+
+        button:hover { background: #f0f0f0; }
+    </style>
+</head>
+<body>
+
+<div class="calc">
+    <input type="text" id="res" readonly>
+    <div class="grid">
+        <button onclick="add('7')">7</button><button onclick="add('8')">8</button>
+        <button onclick="add('9')">9</button><button onclick="add('/')">/</button>
+        <button onclick="add('4')">4</button><button onclick="add('5')">5</button>
+        <button onclick="add('6')">6</button><button onclick="add('*')">*</button>
+        <button onclick="add('1')">1</button><button onclick="add('2')">2</button>
+        <button onclick="add('3')">3</button><button onclick="add('-')">-</button>
+        <button onclick="add('0')">0</button><button onclick="clr()">C</button>
+        <button onclick="calc()">=</button><button onclick="add('+')">+</button>
+    </div>
+</div>
+
+<script>
+    let box = document.getElementById("res");
+    function add(val) { box.value += val; }
+    function clr() { box.value = ""; }
+    function calc() {
+        try { 
+            // Using Function constructor for a bit more safety than eval
+            box.value = new Function('return ' + box.value)(); 
+        } 
+        catch { box.value = "Error"; }
+    }
+</script>
+
+</body>
+</html>
