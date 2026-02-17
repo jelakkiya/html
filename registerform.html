@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2026 Workshop Registration</title>
+    <!-- This small internal style is the only way to show/hide elements without JavaScript -->
+    <style>
+        #success-alert { display: none; }
+        #success-alert:target { display: block !important; }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 40px;">
+
+    <!-- The Success Message (hidden until form is submitted) -->
+    <div id="success-alert" style="max-width: 500px; margin: 0 auto 20px auto; background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center; font-weight: bold;">
+        Form Submitted Successfully!
+    </div>
+
+    <div style="max-width: 500px; margin: auto; background: white; padding: 30px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        
+        <h2 style="text-align: center; color: #333; margin-top: 0;">Workshop Registration</h2>
+
+        <!-- Action points to the ID of the success message -->
+        <form action="#success-alert" method="get">
+
+            <!-- 1. Text Control -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Full Name:</label>
+                <input type="text" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <!-- 2. Email Control -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Email Address:</label>
+                <input type="email" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <!-- 3. Number Control -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Years of Experience:</label>
+                <input type="number" min="0" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <!-- 4. Date Control -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Workshop Date:</label>
+                <input type="date" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <!-- 5. Select Dropdown -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Select Workshop Topic:</label>
+                <select required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                    <option value="">--Choose Topic--</option>
+                    <option>Web Development</option>
+                    <option>Data Science</option>
+                    <option>AI Ethics 2026</option>
+                </select>
+            </div>
+
+            <!-- 6. Radio Buttons -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Attendance Mode:</label>
+                <input type="radio" name="mode" value="online" required> Online
+                <input type="radio" name="mode" value="offline" style="margin-left: 10px;"> In-Person
+            </div>
+
+            <!-- 7. Range Slider -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Pre-Workshop Skill Level (1-10):</label>
+                <input type="range" min="1" max="10" style="width: 100%;">
+            </div>
+
+            <!-- 8. File Upload -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Upload ID Proof:</label>
+                <input type="file" required style="font-size: 14px;">
+            </div>
+
+            <!-- 9. Textarea -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Specific Learning Goals:</label>
+                <textarea style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; height: 60px;"></textarea>
+            </div>
+
+            <!-- 10. Checkbox -->
+            <div style="margin-bottom: 20px;">
+                <input type="checkbox" required id="terms">
+                <label for="terms" style="font-size: 14px;">I accept the terms and conditions.</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" style="width: 100%; background-color: #007bff; color: white; padding: 12px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer;">
+                Register Now
+            </button>
+
+        </form>
+    </div>
+
+</body>
+</html>
