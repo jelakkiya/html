@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FitFlow Tracker</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; transition: 0.5s; background: #f4f7f6; }
+        .card { background: white; padding: 30px; width: 350px; margin: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        input { padding: 10px; width: 80%; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+        button { padding: 12px 24px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; }
+        #status { margin-top: 20px; font-weight: bold; }
+        .progress-bar { height: 10px; background: #eee; border-radius: 5px; margin-top: 15px; overflow: hidden; }
+        #fill { height: 100%; width: 0%; background: #00d2ff; transition: 0.4s; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>💧 Hydration Tracker</h2>
+    <input type="number" id="weight" placeholder="Enter weight (kg)">
+    <button onclick="calculateGoal()">Set Daily Goal</button>
+    
+    <div id="tracker" style="display:none;">
+        <p id="goalText"></p>
+        <button onclick="addWater()">Drink 250ml 🥤</button>
+        <div class="progress-bar"><div id="fill"></div></div>
+        <p id="status"></p>
+    </div>
+</div>
+
+<script>
+let dailyGoal = 0;
+let consumed = 0;
+
+// --- USER-DEFINED FUNCTIONS ---
+
+function calculateGoal() {
+    let weight = document.getElementById("weight").value;
+    if(weight <= 0) return alert("Please enter a valid weight!");
+
+    // Logic: 35ml of water per kg of body weight
+    dailyGoal = Math.round(weight * 35); 
+    
+    document.getElementById("tracker").style.display = "block";
+    document.getElementById("goalText").innerText = "Your Goal: " + dailyGoal + "ml";
+    updateUI();
+}
+
+function addWater() {
+    consumed += 250;
+    updateUI();
+    checkMilestones();
+}
+
+function updateUI() {
+    // STANDARD FUNCTION USAGE (Math.min to cap at 100%)
+    let percentage = Math.min((consumed / dailyGoal) * 100, 100);
+    document.getElementById("fill").style.width = percentage + "%";
+    
+    document.getElementById("status").innerHTML = 
+        `Consumed: ${consumed}ml / ${dailyGoal}ml`;
+}
+
+function checkMilestones() {
+    // Logic for UI Feedback
+    if(consumed >= dailyGoal) {
+        document.body.style.backgroundColor = "#d4edda"; // Success Green
+        document.getElementById("status").innerHTML += "<br>🎉 Goal Reached!";
+    } else if (consumed > dailyGoal / 2) {
+        document.body.style.backgroundColor = "#fff3cd"; // Progress Yellow
+    }
+}
+</script>
+
+</body>
+</html>
