@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Recipe Lab</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            flex: 1 1 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+
+        mark {
+            background: #ff5e62;
+            color: white;
+            padding: 2px 6px;
+        }
+
+        code {
+            background: #eee;
+            padding: 4px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🍽️ Digital Recipe Lab</h1>
+        <p><strong>Smart Cooking Interface</strong> | <em>Innovative Kitchen System</em></p>
+        <small>Experimental Culinary Dashboard • 2026</small>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h2>Ingredient Formula</h2>
+            <p>Water: H<sub>2</sub>O</p>
+            <p>Energy Value: 250 kcal<sup>2</sup></p>
+            <p><mark>Main Ingredient:</mark> Fresh Vegetables</p>
+            <p><del>Too much salt</del> <ins>Balanced seasoning</ins></p>
+        </div>
+
+        <div class="card">
+            <h2>Cooking Logic</h2>
+            <code>
+if(heat == medium) { cook(); }
+            </code>
+            <pre>
+Steps:
+1. Chop
+2. Mix
+3. Cook
+4. Serve
+            </pre>
+            <kbd>Ctrl + Taste</kbd><br>
+            Output: <samp>Dish Prepared Successfully</samp><br>
+            Let <var>x</var> = spice level.
+        </div>
+
+        <div class="card">
+            <h2>Chef’s Insight</h2>
+            <blockquote>
+                "Cooking is an art, but precision is science."
+            </blockquote>
+            <q>Flavor speaks louder than words.</q><br>
+            <abbr title="Food Safety and Standards Authority of India">FSSAI</abbr><br>
+            <cite>The Modern Chef Journal</cite>
+        </div>
+
+        <div class="card">
+            <h2>Contact Lab</h2>
+            <address>
+                Recipe Curator:<br>
+                ELAKKIYA J<br>
+                Smart Kitchen Lab<br>
+                Virudhunagar
+            </address>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Digital Recipe Lab Interface
+    </footer>
+
+</div>
+
+</body>
+</html>
